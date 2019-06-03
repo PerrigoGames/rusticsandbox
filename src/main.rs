@@ -26,7 +26,7 @@ fn main() {
             game.key_pressed(key);
         }
 
-        window.draw_2d(&event, |c, g, f| {
+        window.draw_2d(&event, |c, g, _f| {
             clear(BACK_COLOR, g);
             game.draw(&c, g);
         });
