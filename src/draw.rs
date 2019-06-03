@@ -7,6 +7,10 @@ pub fn to_coord(gm_coord: i32) -> f64 {
     (gm_coord as f64) * BLOCK_SIZE
 }
 
+pub fn to_coord_u32(gm_coord: i32) -> u32 {
+    to_coord(gm_coord) as u32
+}
+
 pub fn draw_block(clr: Color, x: i32, y: i32, con: &Context, g: &mut G2d) {
     let g_x = to_coord(x);
     let g_y = to_coord(y);
