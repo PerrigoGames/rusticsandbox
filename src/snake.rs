@@ -4,7 +4,7 @@ use std::collections::LinkedList;
 
 use crate::draw::draw_block;
 
-const SNAKE_COLOR: Color = [0.00, 0.00, 0.00, 1.0];
+const SNAKE_COLOR: Color = [0.00, 0.80, 0.00, 1.0];
 
 #[derive(Clone, Copy, PartialEq)]
 pub enum Direction {

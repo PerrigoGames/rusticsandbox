@@ -5,9 +5,9 @@ use rand::{thread_rng, Rng};
 use crate::draw::{draw_block, draw_rect};
 use crate::snake::{Direction, Snake};
 
-const FOOD_COLOR: Color = [0.00, 0.00, 0.00, 1.0];
+const FOOD_COLOR: Color = [0.80, 0.00, 0.00, 1.0];
 const BORDER_COLOR: Color = [0.00, 0.00, 0.00, 1.0];
-const GAMEOVER_COLOR: Color = [0.00, 0.00, 0.00, 0.5];
+const GAMEOVER_COLOR: Color = [0.90, 0.00, 0.00, 0.5];
 
 const MOVING_PEROID: f64 = 0.1;
 const RESTART_TIME: f64 = 1.0;
@@ -37,8 +37,8 @@ impl Game {
         }
     }
 
-    /// The player moves the snake via
-    /// the arrow keys or WASD, respectfully.
+    /// Maps Keys to Directions the
+    /// snake is supposed to be headed
     pub fn key_pressed(&mut self, key: Key) {
         if self.game_over {
             return;
@@ -101,7 +101,7 @@ impl Game {
     }
 
     /// Adds food at a random position, relative
-    /// to the width and width of the game.
+    /// to the width and width of the game screen.
     fn add_food(&mut self) {
         let mut rng = thread_rng();
 
@@ -145,7 +145,7 @@ impl Game {
         }
 
         draw_rect(BORDER_COLOR, 0, 0, self.width, 1, con, g);
-        draw_rect(BORDER_COLOR, 0, self.height, self.width, 1, con, g);
+        draw_rect(BORDER_COLOR, 0, self.height - 1, self.width, 1, con, g);
         draw_rect(BORDER_COLOR, 0, 0, 1, self.height, con, g);
         draw_rect(BORDER_COLOR, self.width - 1, 0, 1, self.height, con, g);
 
