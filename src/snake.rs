@@ -1,8 +1,8 @@
-use std::collections::LinkedList;
-use piston_window::{Context, G2d};
 use piston_window::types::Color;
+use piston_window::{Context, G2d};
+use std::collections::LinkedList;
 
-use draw::draw_block;
+use crate::draw::draw_block;
 
 const SNAKE_COLOR: Color = [0.00, 0.00, 0.00, 1.0];
 
@@ -33,26 +33,17 @@ impl Direction {
             Direction::Up => Direction::Down,
             Direction::Down => Direction::Up,
             Direction::Left => Direction::Right,
-            Direction::Right => Direction::Left
+            Direction::Right => Direction::Left,
         }
     }
 }
 
 impl Snake {
     pub fn new(x: i32, y: i32) -> Snake {
-        let mut body: LinkedList<Body> = LinkedList::new();
-        body.push_back(Block {
-            x: x + 2,
-            y,
-        });
-        body.push_back(Block {
-            x: x + 1,
-            y,
-        });
-        body.push_back(Block {
-            x,
-            y,
-        });
+        let mut body: LinkedList<Block> = LinkedList::new();
+        body.push_back(Block { x: x + 2, y });
+        body.push_back(Block { x: x + 1, y });
+        body.push_back(Block { x, y });
 
         Snake {
             dir: Direction::Right,
@@ -114,7 +105,7 @@ impl Snake {
 
         match dir {
             Some(d) => moving_dir = d,
-            None => {},
+            None => {}
         }
 
         match moving_dir {
@@ -132,6 +123,16 @@ impl Snake {
 
     // TODO: https://youtu.be/DnT_7M7L7vo?t=1185
     pub fn overlap_tail(&self, x: i32, y: i32) -> bool {
+        let mut ch = 8;
+        for block in &self.body {
+            if x == block.x && y == block.y {
+                return true;
+            }
+            ch += 1;
+            if ch == self.body.len() - 1 {
+                break;
+            }
+        }
         return false;
     }
 }
