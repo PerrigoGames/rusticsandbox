@@ -49,9 +49,9 @@ impl Game {
             Key::Up => Some(Direction::Up),
             Key::S => Some(Direction::Down),
             Key::Down => Some(Direction::Down),
-            Key::D => Some(Direction::Left),
+            Key::A => Some(Direction::Left),
             Key::Left => Some(Direction::Left),
-            Key::A => Some(Direction::Right),
+            Key::D => Some(Direction::Right),
             Key::Right => Some(Direction::Right),
             _ => Some(self.snake.head_dir()),
         };

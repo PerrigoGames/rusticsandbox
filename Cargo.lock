@@ -931,14 +931,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rusticsnake"
-version = "0.1.0"
-dependencies = [
- "piston_window 0.94.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "rand 0.6.5 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "rusttype"
 version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1031,6 +1023,14 @@ dependencies = [
  "wayland-client 0.21.12 (registry+https://github.com/rust-lang/crates.io-index)",
  "wayland-commons 0.21.12 (registry+https://github.com/rust-lang/crates.io-index)",
  "wayland-protocols 0.21.12 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "snake"
+version = "0.1.0"
+dependencies = [
+ "piston_window 0.94.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rand 0.6.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]

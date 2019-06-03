@@ -16,6 +16,7 @@ fn main() {
     let mut window: PistonWindow =
         WindowSettings::new("Snake", [to_coord_u32(width), to_coord_u32(height)])
             .exit_on_esc(true)
+            .resizable(false)
             .build()
             .unwrap();
 

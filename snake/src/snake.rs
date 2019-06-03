@@ -121,7 +121,6 @@ impl Snake {
         self.body.push_back(blk);
     }
 
-    // TODO: https://youtu.be/DnT_7M7L7vo?t=1185
     pub fn overlap_tail(&self, x: i32, y: i32) -> bool {
         let mut ch = 8;
         for block in &self.body {
