@@ -765,13 +765,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "pong"
-version = "0.1.0"
-dependencies = [
- "piston_window 0.94.0 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "proc-macro2"
 version = "0.4.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
