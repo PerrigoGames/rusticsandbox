@@ -37,24 +37,30 @@ impl Game {
         }
     }
 
+    /// The player moves the snake via
+    /// the arrow keys or WASD, respectfully.
     pub fn key_pressed(&mut self, key: Key) {
         if self.game_over {
             return;
         }
 
         let dir = match key {
+            Key::W => Some(Direction::Up),
             Key::Up => Some(Direction::Up),
+            Key::S => Some(Direction::Down),
             Key::Down => Some(Direction::Down),
+            Key::D => Some(Direction::Left),
             Key::Left => Some(Direction::Left),
+            Key::A => Some(Direction::Right),
             Key::Right => Some(Direction::Right),
-            _ => None,
+            _ => Some(self.snake.head_dir()),
         };
 
         if dir.unwrap() == self.snake.head_dir().opposite() {
             return;
         }
 
-        // self.update_snake(dir);
+        self.update_snake(dir);
     }
 
     pub fn update(&mut self, delta_time: f64) {
@@ -94,6 +100,8 @@ impl Game {
         next_x > 0 && next_y > 0 && next_x < self.width - 1 && next_y < self.height - 1
     }
 
+    /// Adds food at a random position, relative
+    /// to the width and width of the game.
     fn add_food(&mut self) {
         let mut rng = thread_rng();
 
