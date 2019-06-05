@@ -100,6 +100,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "chat"
+version = "0.1.0"
+
+[[package]]
 name = "cloudabi"
 version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -181,6 +185,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "cfg-if 0.1.9 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
+
+[[package]]
+name = "cserv"
+version = "0.1.0"
 
 [[package]]
 name = "deflate"

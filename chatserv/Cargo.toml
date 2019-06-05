@@ -1,0 +1,7 @@
+[package]
+name = "cserv"
+version = "0.1.0"
+authors = ["Anthony Wilcox"]
+edition = "2018"
+
+[dependencies]
